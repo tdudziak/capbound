@@ -8,6 +8,8 @@
 #include <sys/capability.h>
 #include <sys/prctl.h>
 
+#include "config.h"
+
 static struct option long_options[] = {
 	{"capabilities", required_argument, 0, 'c'},
 	{"help", no_argument, 0, 'h'},
@@ -16,14 +18,12 @@ static struct option long_options[] = {
 };
 
 const char* usage_message = "\
-Run COMMAND with dropped CAP_LINUX_IMMUTABLE.\n\
+Run COMMAND with different capability bounding set.\n\
 \n\
   -c, --capabilities=CAPS  drop only capabilities CAPS\n\
   -h, --help               display this help and exit\n\
   -v, --version            output version information and exit\n\
 ";
-
-const char* version_message = "dropcap 0.1";
 
 char *program_name;
 
@@ -95,7 +95,7 @@ main(int argc, char** argv)
 			usage(EXIT_SUCCESS);
 
 		case 'v':
-			puts(version_message);
+			puts(PACKAGE_NAME " " PACKAGE_VERSION);
 			exit(EXIT_SUCCESS);
 
 		case 'c':

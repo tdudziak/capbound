@@ -1,4 +1,0 @@
-LDFLAGS=@LDFLAGS@ @LIBS@
-CFLAGS=@CFLAGS@
-
-dropcap: dropcap.c

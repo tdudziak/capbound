@@ -3,5 +3,14 @@ Makefile
 config.h
 config.status
 configure
+Makefile.in
 
 dropcap
+dropcap-*.tar*
+
+.deps
+aclocal.m4
+depcomp
+install-sh
+missing
+stamp-h1
