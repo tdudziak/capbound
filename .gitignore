@@ -1,0 +1,7 @@
+Makefile
+*.cache
+config.h
+config.status
+configure
+
+dropcap
