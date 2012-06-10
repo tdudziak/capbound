@@ -18,7 +18,8 @@ static struct option long_options[] = {
 };
 
 const char* usage_message = "\
-Run COMMAND with different capability bounding set.\n\
+Run COMMAND with different capability bounding set.  When not specified, CAPS\n\
+defaults to `" DEFAULT_CAPABILITIES "'\n\
 \n\
   -c, --capabilities=CAPS  drop only capabilities CAPS\n\
   -h, --help               display this help and exit\n\
@@ -81,7 +82,7 @@ drop_capabilities(const char* capspec)
 int
 main(int argc, char** argv)
 {
-	char *capspec = "";
+	char *capspec = DEFAULT_CAPABILITIES;
 	program_name = argv[0];
 
 	while (1) {
