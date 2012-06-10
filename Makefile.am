@@ -1,2 +1,2 @@
-bin_PROGRAMS=dropcap
-dropcap_SOURCES=dropcap.c
+bin_PROGRAMS=capbound
+capbound_SOURCES=capbound.c

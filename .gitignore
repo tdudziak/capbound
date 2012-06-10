@@ -5,8 +5,8 @@ config.status
 configure
 Makefile.in
 
-dropcap
-dropcap-*.tar*
+capbound
+capbound-*.tar*
 
 .deps
 aclocal.m4

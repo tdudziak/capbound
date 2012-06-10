@@ -95,7 +95,7 @@ main(int argc, char** argv)
 			usage(EXIT_SUCCESS);
 
 		case 'v':
-			puts(PACKAGE_NAME " " PACKAGE_VERSION);
+			puts(PACKAGE_STRING);
 			exit(EXIT_SUCCESS);
 
 		case 'c':
