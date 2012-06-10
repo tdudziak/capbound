@@ -1,3 +1,4 @@
-CFLAGS=-O2 -Wall
+LDFLAGS=@LDFLAGS@ @LIBS@
+CFLAGS=@CFLAGS@
 
 dropcap: dropcap.c
