@@ -1,0 +1,26 @@
+capbound
+========
+
+This is a simple command line utility for managing Linux capability bounding
+set.  There used to be a procfs file /proc/sys/kernel/cap-bound exactly for
+that purpose but in newer kernels the global setting has been replaced by a
+per-process, inheritable bounding set.  I couldn't find a convenient userspace
+tool for running a program with restricted set so I wrote one.
+
+Building & Installing
+=====================
+
+$ ./configure
+$ make
+$ sudo make install
+
+Usage
+=====
+
+capbound [OPTION] COMMAND [ARG...]
+Run COMMAND with different capability bounding set.  When not specified, CAPS
+defaults to `CAP_SYS_MODULE,CAP_SYS_RAWIO'
+
+  -c, --capabilities=CAPS  drop only capabilities CAPS
+  -h, --help               display this help and exit
+  -v, --version            output version information and exit
