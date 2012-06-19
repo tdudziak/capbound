@@ -1,0 +1,34 @@
+.TH capbound 1 "June 12, 2012" "version 0.1" "USER COMMANDS"
+.SH NAME
+capbound \- run a program with different capability bounding set
+.SH SYNOPSIS
+.B capbound
+[\fIOPTION\fR] \fICOMMAND\fR [\fIARG\fR...]
+.SH DESCRIPTION
+This program runs a specified command with altered capability bounding set,
+just like nice(1) runs a command with a modified scheduling priority.  The
+capability bounding set is an inheritable per-process bitmask that limits
+possible POSIX capabilities that maybe claimed by this process.  Note that
+this allows to prohibit the superuser from exercising some of his special
+privileges.
+.PP
+.TP
+\fB\-c\fR, \fB\-\-capabilities\fR=\fICAPS\fR
+Drop only given capabilities. \fICAPS\fR is a comma-separated list of
+capability names. See capabilities(7) for a full reference.
+.TP
+\fB\-\-help\fR
+Display short usage instructions.
+.TP
+\fB\-\-version\fR
+Output version information and exit.
+.PP
+When run without the `-c' option, this program will drop a default set of
+capabilities.  Run `capbound --help' to see it.
+.SH EXIT STATUS
+In case of error the program exits with a non-zero status.  Otherwise, the
+program will pass the exit status of the executed \fICOMMAND\fR.
+.SH AUTHOR
+Tomasz Dudziak <tomasz.dudziak@gmail.com>
+.SH SEE ALSO
+capabilities(7)

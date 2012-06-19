@@ -1,2 +1,2 @@
 bin_PROGRAMS=capbound
-capbound_SOURCES=capbound.c
+dist_man_MANS=capbound.1
