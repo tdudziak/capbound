@@ -10,6 +10,16 @@ tool for running a program with restricted set so I wrote one.
 Building & Installing
 =====================
 
+When installing from the git repo, you should start with generating the
+configuration script using Autoconf and Automake:
+
+$ aclocal
+$ autoheader
+$ automake --foreign --add-missing
+$ autoconf
+
+Then configure, build, and install using:
+
 $ ./configure
 $ make
 $ sudo make install

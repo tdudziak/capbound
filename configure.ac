@@ -23,5 +23,8 @@ AC_CHECK_HEADERS([stdlib.h unistd.h getopt.h sys/capability.h sys/prctl.h])
 AC_CHECK_FUNC(getopt_long, , AC_MSG_ERROR(getopt_long() is missing))
 AC_CHECK_FUNC(prctl, , AC_MSG_ERROR(No prctl(). Is this a Linux system?))
 
+AC_DEFINE([DEFAULT_CAPABILITIES], ["CAP_SYS_MODULE,CAP_SYS_RAWIO"],
+	  [Default capabilities to drop])
+
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
