@@ -115,6 +115,11 @@ getopt_end:
 	}
 
 	drop_capabilities(capspec);
-	execvp(argv[optind], &argv[optind]);
-	return EXIT_SUCCESS; /* unreachable */
+
+	if (execvp(argv[optind], &argv[optind]) < 0) {
+		perror("Cannot execute given command");
+		return EXIT_FAILURE;
+	}
+
+	return EXIT_FAILURE; /* unreachable */
 }
